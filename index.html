@@ -135,7 +135,7 @@
                         distances = [ euclidean_distance(test_x, x )  for x in pd_conditions_train_np    ]
                         k = 3
                         k_neighbor_indices = np.argsort(distances)[:k]
-                        selected_imgs_to_avg = [ pd_imgs_np_train_np[i].reshape((140, 39))  for i in k_neighbor_indices  ]
+                        selected_imgs_to_avg = [ pd_imgs_np_train_np[i].reshape((224, 224, 3))  for i in k_neighbor_indices  ]
                     
                         avg_gen_img = np.mean( np.array(selected_imgs_to_avg), axis=0 )
                         avg_gen_img = avg_gen_img.astype(int)
@@ -196,13 +196,6 @@
                     
                         #####################################################
 
-                        ## fig, ax = plt.subplots(1,2)
-                        ## ax[0].imshow(generated_img)
-                        ## ax[1].imshow(generated_img)
-                        ## ax[0].set_title("Gen: " + str_conditions)
-                        ## ax[1].set_title("real")
-                        ## Element('mpl').element.innerText = ""        ## use this to not accumulate imgs
-                        ## display(fig, target="mpl")
    
                 </script>
 
